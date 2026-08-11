@@ -3,30 +3,543 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heydev - Premium Domain For Sale</title>
+    <title>HEYDEV - 品牌域名矩阵 | Brand Domain Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f9fafb; color: #1f2937; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .card { background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center; max-width: 500px; width: 90%; }
-        h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: #111827; word-break: break-all; }
-        p { color: #6b7280; font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.6; }
-        .badge { display: inline-block; background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; margin-bottom: 1.5rem; font-weight: 600; }
-        a.btn { display: inline-block; background: #2563eb; color: white; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
-        a.btn:hover { background: #1d4ed8; }
-        .contact { margin-top: 1.5rem; font-size: 0.9rem; color: #9ca3af; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-glow: #818cf8;
+            --accent: #22d3ee;
+            --dark: #0f0f1a;
+            --darker: #08080f;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --card: rgba(255,255,255,0.03);
+            --border: rgba(255,255,255,0.08);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--darker);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 导航 */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 0;
+        }
+
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .badge {
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(34,211,238,0.1));
+            border: 1px solid rgba(99,102,241,0.2);
+            color: var(--primary-glow);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+        }
+
+        .domain-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 700;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff 0%, #818cf8 50%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            box-shadow: 0 4px 24px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--card);
+            color: var(--text);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        /* 域名矩阵 */
+        .portfolio-section {
+            padding: 40px 0 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            font-size: 0.95rem;
+        }
+
+        .domain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .domain-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 36px 28px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .domain-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .domain-card:hover {
+            border-color: rgba(99, 102, 241, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 48px rgba(0,0,0,0.4);
+        }
+
+        .domain-card:hover::before {
+            opacity: 1;
+        }
+
+        .domain-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .domain-card-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.5px;
+        }
+
+        .domain-card-tld {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .domain-tag {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-glow);
+            border: 1px solid rgba(99, 102, 241, 0.15);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .domain-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .domain-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .domain-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* 组合价值 */
+        .value-section {
+            padding: 60px 0;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .value-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .value-card-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+        }
+
+        .value-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .value-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* 联系 */
+        .contact-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,211,238,0.05));
+            border: 1px solid rgba(99,102,241,0.15);
+            border-radius: 24px;
+            padding: 60px 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-box h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: var(--text-muted);
+            margin-bottom: 32px;
+            font-size: 1rem;
+        }
+
+        .email-display {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 28px;
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1.1rem;
+            color: var(--accent);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .email-display:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--accent);
+        }
+
+        .copy-hint {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 12px;
+            opacity: 0.7;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* 粒子 */
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+            pointer-events: none;
+            animation: float 15s infinite;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
+        }
+
+        @media (max-width: 640px) {
+            .hero { padding: 40px 0 30px; }
+            .contact-box { padding: 40px 24px; }
+            .domain-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <span class="badge">Premium Domain For Sale</span>
-        <h1>Heydev.cn</h1>
-        <p>
-            专为开发者、技术社区与 SaaS 产品打造的黄金域名。<br>
-            简短易记，品牌感强，助力您的技术品牌脱颖而出。
-        </p>
-        <a href="mailto:jimmyshu51@gmail.com?subject=Heydev.cn 购买咨询" class="btn">立即询价 / Make an Offer</a>
-        <div class="contact">
-            或发送邮件至：jimmyshu51@gmail.com<br>
-        </div>
+    <div id="particles"></div>
+
+    <div class="container">
+        <nav>
+            <div class="logo">HEY<span>DEV</span></div>
+            <div class="badge">🤝 开放合作中</div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-label">品牌域名矩阵 · Domain Portfolio</div>
+            <h1 class="domain-name">HEYDEV</h1>
+            <p class="tagline">
+                覆盖 .cn / .com.cn / .cloud 的完整品牌域名组合，<br>
+                为技术团队提供从本土深耕到云端布局的全链路品牌资产。
+            </p>
+            <div class="cta-group">
+                <a href="mailto:jimmyshu51@gmail.com?subject=HEYDEV 品牌合作咨询" class="btn btn-primary">
+                    🤝 洽谈合作
+                </a>
+                <a href="#portfolio" class="btn btn-secondary">
+                    查看矩阵
+                </a>
+            </div>
+        </section>
+
+        <section class="portfolio-section" id="portfolio">
+            <h2 class="section-title">域名资产矩阵</h2>
+            <p class="section-subtitle">三套互补的域名组合，构建完整的品牌护城河</p>
+            
+            <div class="domain-grid">
+                <div class="domain-card">
+                    <div class="domain-card-header">
+                        <div class="domain-card-name">HEYDEV<span class="domain-card-tld">.CN</span></div>
+                        <span class="domain-tag">本土核心</span>
+                    </div>
+                    <p>中国国家顶级域名，是面向国内开发者市场、建立本土品牌认知的首选。简短有力，适合技术社区、开发者平台及本土 SaaS 品牌。</p>
+                    <div class="domain-meta">
+                        <span>🇨🇳 中国市场</span>
+                        <span>⚡ 6 字母</span>
+                    </div>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-card-header">
+                        <div class="domain-card-name">HEYDEV<span class="domain-card-tld">.COM.CN</span></div>
+                        <span class="domain-tag">商业背书</span>
+                    </div>
+                    <p>中国商业域名，兼具国际商业属性与本土合规背书。适合企业级服务、B2B 技术方案、官方品牌站点，增强客户信任感。</p>
+                    <div class="domain-meta">
+                        <span>🏢 企业品牌</span>
+                        <span>🛡️ 商业合规</span>
+                    </div>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-card-header">
+                        <div class="domain-card-name">HEYDEV<span class="domain-card-tld">.CLOUD</span></div>
+                        <span class="domain-tag">云原生</span>
+                    </div>
+                    <p>新顶级域名，天然契合云计算、云原生、DevOps 及基础设施赛道。品牌指向性极强，是布局云服务市场的精准入口。</p>
+                    <div class="domain-meta">
+                        <span>☁️ 云原生</span>
+                        <span>🚀 高辨识度</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="value-section">
+            <h2 class="section-title">组合价值</h2>
+            <p class="section-subtitle">三套域名协同，形成品牌保护与市场覆盖的完整闭环</p>
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-card-icon">🎯</div>
+                    <h3>品牌护城河</h3>
+                    <p>同时持有 .cn / .com.cn / .cloud，有效防止品牌仿冒与流量分散，构建完整的品牌防御体系。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon">🌐</div>
+                    <h3>全场景覆盖</h3>
+                    <p>从本土用户触达到企业商业背书，再到云原生技术定位，不同域名承担不同战略角色。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon">💎</div>
+                    <h3>稀缺资产包</h3>
+                    <p>优质短域名组合日益稀缺，"Hey+Dev" 的情感连接力与技术指向性，具备长期品牌沉淀价值。</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-card-icon">📈</div>
+                    <h3>协同增值</h3>
+                    <p>组合持有远大于单一域名的价值总和，适合有长期品牌规划的技术团队一次性战略布局。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="contact-box">
+                <h2>期待与您的团队共创</h2>
+                <p>如果您正在寻找能够承载技术愿景的品牌域名组合，欢迎随时联系探讨合作可能。</p>
+                <a href="mailto:jimmyshu51@gmail.com?subject=HEYDEV 品牌合作咨询" class="email-display" id="emailBox">
+                    <span>✉️</span>
+                    <span>jimmyshu51@gmail.com</span>
+                </a>
+                <p class="copy-hint">点击即可发送邮件</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>© 2026 HEYDEV 品牌域名矩阵 · 合作咨询：jimmyshu51@gmail.com</p>
+        </footer>
     </div>
+
+    <script>
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.top = Math.random() * 100 + 'vh';
+            p.style.animationDelay = Math.random() * 15 + 's';
+            p.style.animationDuration = (10 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(p);
+        }
+
+        document.getElementById('emailBox').addEventListener('click', function(e) {
+            this.style.background = 'rgba(34, 211, 238, 0.1)';
+            setTimeout(() => {
+                this.style.background = '';
+            }, 300);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
 </html>
