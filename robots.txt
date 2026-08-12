@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://heydev.cn/sitemap.xml
