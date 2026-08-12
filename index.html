@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HEYDEV - 品牌域名矩阵 | Brand Domain Portfolio</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y0LTKFZ1B"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3Y0LTKFZ1B');
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
@@ -435,7 +446,7 @@
                 为技术团队提供从本土深耕到云端布局的全链路品牌资产。
             </p>
             <div class="cta-group">
-                <a href="mailto:jimmyshu51@gmail.com?subject=HEYDEV 品牌合作咨询" class="btn btn-primary">
+                <a href="mailto:jimmyshu51@gmail.com?subject=HEYDEV 品牌合作咨询" class="btn btn-primary" id="heroCtaBtn">
                     🤝 洽谈合作
                 </a>
                 <a href="#portfolio" class="btn btn-secondary">
@@ -536,6 +547,7 @@
     </div>
 
     <script>
+        // 生成背景粒子
         const particlesContainer = document.getElementById('particles');
         for (let i = 0; i < 30; i++) {
             const p = document.createElement('div');
@@ -547,13 +559,36 @@
             particlesContainer.appendChild(p);
         }
 
+        // GA4 邮件点击事件追踪封装函数
+        function trackEmailClick(locationLabel) {
+            if (typeof gtag === 'function') {
+                gtag('event', 'click_contact_email', {
+                    'event_category': 'Engagement',
+                    'event_label': locationLabel
+                });
+            }
+        }
+
+        // 底部邮件卡片点击事件
         document.getElementById('emailBox').addEventListener('click', function(e) {
             this.style.background = 'rgba(34, 211, 238, 0.1)';
             setTimeout(() => {
                 this.style.background = '';
             }, 300);
+
+            // 触发 GA4 点击事件追踪
+            trackEmailClick('Bottom Contact Card');
         });
 
+        // 顶部 Hero 洽谈合作按钮点击事件
+        const heroBtn = document.getElementById('heroCtaBtn');
+        if (heroBtn) {
+            heroBtn.addEventListener('click', function() {
+                trackEmailClick('Hero CTA Button');
+            });
+        }
+
+        // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
