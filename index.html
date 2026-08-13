@@ -4,8 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="baidu-site-verification" content="codeva-7zWNXZoBj7" />
-    <title>heydev.cn - 专为开发者与技术品牌打造的优质域名出售</title>
-    <meta name="description" content="HEYDEV 品牌域名矩阵现整体出售，包含 heydev.cn（本土核心）、heydev.com.cn（商业背书）和 heydev.cloud（云原生定位）。三套互补域名组合，为技术团队构建完整的品牌护城河，助力从本土深耕到云端布局。欢迎洽谈合作。">
+    
+    <!-- SEO 核心优化 -->
+    <title>HEYDEV - 开发者品牌域名矩阵 | heydev.cn / heydev.com.cn / heydev.cloud</title>
+    <meta name="description" content="HEYDEV 品牌域名矩阵：heydev.cn（中国开发者市场核心入口）、heydev.com.cn（企业级商业背书）、heydev.cloud（云原生精准定位）。专为开发者工具、SaaS、云原生及技术团队打造的品牌资产组合，开放品牌合作与战略咨询。">
+    <meta name="keywords" content="heydev, 开发者域名, dev域名, 域名出售, 技术品牌, 云原生域名, 开发者工具品牌, heydev.cn, heydev.cloud, 域名投资, 品牌护城河">
+    <meta name="author" content="HEYDEV">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / 社交媒体优化 -->
+    <meta property="og:title" content="HEYDEV - 开发者品牌域名矩阵">
+    <meta property="og:description" content="覆盖 .cn / .com.cn / .cloud 的完整开发者品牌域名组合，为技术团队构建品牌护城河。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://heydev.cn/">
+    <meta property="og:site_name" content="HEYDEV">
+    
+    <!-- 结构化数据：Organization + WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "HEYDEV",
+      "url": "https://heydev.cn",
+      "email": "jimmyshu51@gmail.com",
+      "description": "开发者品牌域名矩阵，覆盖 heydev.cn、heydev.com.cn、heydev.cloud",
+      "brand": {
+        "@type": "Brand",
+        "name": "HEYDEV"
+      }
+    }
+    </script>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-3Y0LTKFZ1B"></script>
@@ -13,7 +41,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-3Y0LTKFZ1B');
     </script>
 
@@ -175,7 +202,7 @@
 
         .section-title {
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.75rem;
             font-weight: 700;
             margin-bottom: 12px;
             color: var(--text);
@@ -276,9 +303,77 @@
             gap: 6px;
         }
 
+        /* 开发者故事模块 - 新增 */
+        .stories-section {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .story-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .story-card:hover {
+            border-color: rgba(99, 102, 241, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .story-card .quote-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            opacity: 0.3;
+            margin-bottom: 12px;
+            font-family: Georgia, serif;
+        }
+
+        .story-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .story-card .story-role {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 16px;
+            display: inline-block;
+            background: rgba(34, 211, 238, 0.08);
+            padding: 4px 12px;
+            border-radius: 100px;
+        }
+
+        .story-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .story-card .story-domain {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-family: 'Space Grotesk', monospace;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+
         /* 组合价值 */
         .value-section {
             padding: 60px 0;
+            border-top: 1px solid var(--border);
         }
 
         .value-grid {
@@ -323,10 +418,11 @@
             line-height: 1.6;
         }
 
-        /* 联系 */
+        /* 联系模块 - 重构 */
         .contact-section {
             padding: 80px 0;
             text-align: center;
+            border-top: 1px solid var(--border);
         }
 
         .contact-box {
@@ -334,8 +430,14 @@
             border: 1px solid rgba(99,102,241,0.15);
             border-radius: 24px;
             padding: 60px 40px;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-box-header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         .contact-box h2 {
@@ -344,10 +446,51 @@
             margin-bottom: 12px;
         }
 
-        .contact-box p {
+        .contact-box > p {
             color: var(--text-muted);
             margin-bottom: 32px;
-            font-size: 1rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .contact-info li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .contact-info .highlight {
+            color: var(--accent);
+            font-weight: 600;
         }
 
         .email-display {
@@ -364,6 +507,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
+            margin-top: 8px;
         }
 
         .email-display:hover {
@@ -376,6 +520,23 @@
             color: var(--text-muted);
             margin-top: 12px;
             opacity: 0.7;
+            text-align: center;
+        }
+
+        .contact-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 32px 0;
+        }
+
+        .contact-cta {
+            text-align: center;
+        }
+
+        .contact-cta p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
         }
 
         /* 页脚与免责声明 */
@@ -424,10 +585,15 @@
             100% { transform: translateY(-100vh) translateX(50px); opacity: 0; }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
             .hero { padding: 40px 0 30px; }
             .contact-box { padding: 40px 24px; }
             .domain-grid { grid-template-columns: 1fr; }
+            .stories-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -435,111 +601,189 @@
     <div id="particles"></div>
 
     <div class="container">
-        <nav>
+        <nav role="navigation" aria-label="主导航">
             <div class="logo">HEY<span>DEV</span></div>
             <div class="badge">🤝 开放合作中</div>
         </nav>
 
-        <section class="hero">
+        <header class="hero" role="banner">
             <div class="hero-label">品牌域名矩阵 · Domain Portfolio</div>
             <h1 class="domain-name">HEYDEV</h1>
             <p class="tagline">
-                覆盖 .cn / .com.cn / .cloud 的完整品牌域名组合，<br>
+                覆盖 .cn / .com.cn / .cloud 的完整开发者品牌域名组合，<br>
                 为技术团队提供从本土深耕到云端布局的全链路品牌资产。
             </p>
             <div class="cta-group">
-                <a href="mailto:jimmyshu51@gmail.com?subject=HEYDEV 品牌合作咨询" class="btn btn-primary" id="heroCtaBtn">
+                <a href="#contact" class="btn btn-primary" id="heroCtaBtn" aria-label="前往联系页面洽谈合作">
                     🤝 洽谈合作
                 </a>
-                <a href="#portfolio" class="btn btn-secondary">
+                <a href="#portfolio" class="btn btn-secondary" aria-label="查看域名资产矩阵">
                     查看矩阵
                 </a>
             </div>
-        </section>
+        </header>
 
-        <section class="portfolio-section" id="portfolio">
-            <h2 class="section-title">域名资产矩阵</h2>
-            <p class="section-subtitle">三套互补的域名组合，构建完整的品牌护城河</p>
-            
-            <div class="domain-grid">
-                <div class="domain-card">
-                    <div class="domain-card-header">
-                        <div class="domain-card-name">HEYDEV<span class="domain-card-tld">.CN</span></div>
-                        <span class="domain-tag">本土核心</span>
-                    </div>
-                    <p>中国国家顶级域名，是面向国内开发者市场、建立本土品牌认知的首选。简短有力，适合技术社区、开发者平台及本土 SaaS 品牌。</p>
-                    <div class="domain-meta">
-                        <span>🇨🇳 中国市场</span>
-                        <span>⚡ 6 字母</span>
-                    </div>
-                </div>
+        <main>
+            <!-- 域名资产矩阵 -->
+            <section class="portfolio-section" id="portfolio" aria-labelledby="portfolio-title">
+                <h2 class="section-title" id="portfolio-title">域名资产矩阵</h2>
+                <p class="section-subtitle">三套互补的域名组合，构建完整的品牌护城河</p>
+                
+                <div class="domain-grid">
+                    <article class="domain-card">
+                        <div class="domain-card-header">
+                            <h3 class="domain-card-name">HEYDEV<span class="domain-card-tld">.CN</span></h3>
+                            <span class="domain-tag">本土核心</span>
+                        </div>
+                        <p>中国国家顶级域名，是面向国内开发者市场、建立本土品牌认知的首选。简短有力，适合技术社区、开发者平台及本土 SaaS 品牌。</p>
+                        <div class="domain-meta">
+                            <span>🇨🇳 中国市场</span>
+                            <span>⚡ 6 字母</span>
+                        </div>
+                    </article>
 
-                <div class="domain-card">
-                    <div class="domain-card-header">
-                        <div class="domain-card-name">HEYDEV<span class="domain-card-tld">.COM.CN</span></div>
-                        <span class="domain-tag">商业背书</span>
-                    </div>
-                    <p>中国商业域名，兼具国际商业属性与本土合规背书。适合企业级服务、B2B 技术方案、官方品牌站点，增强客户信任感。</p>
-                    <div class="domain-meta">
-                        <span>🏢 企业品牌</span>
-                        <span>🛡️ 商业合规</span>
-                    </div>
-                </div>
+                    <article class="domain-card">
+                        <div class="domain-card-header">
+                            <h3 class="domain-card-name">HEYDEV<span class="domain-card-tld">.COM.CN</span></h3>
+                            <span class="domain-tag">商业背书</span>
+                        </div>
+                        <p>中国商业域名，兼具国际商业属性与本土合规背书。适合企业级服务、B2B 技术方案、官方品牌站点，增强客户信任感。</p>
+                        <div class="domain-meta">
+                            <span>🏢 企业品牌</span>
+                            <span>🛡️ 商业合规</span>
+                        </div>
+                    </article>
 
-                <div class="domain-card">
-                    <div class="domain-card-header">
-                        <div class="domain-card-name">HEYDEV<span class="domain-card-tld">.CLOUD</span></div>
-                        <span class="domain-tag">云原生</span>
+                    <article class="domain-card">
+                        <div class="domain-card-header">
+                            <h3 class="domain-card-name">HEYDEV<span class="domain-card-tld">.CLOUD</span></h3>
+                            <span class="domain-tag">云原生</span>
+                        </div>
+                        <p>新顶级域名，天然契合云计算、云原生、DevOps 及基础设施赛道。品牌指向性极强，是布局云服务市场的精准入口。</p>
+                        <div class="domain-meta">
+                            <span>☁️ 云原生</span>
+                            <span>🚀 高辨识度</span>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 开发者故事模块 - 新增 -->
+            <section class="stories-section" id="stories" aria-labelledby="stories-title">
+                <h2 class="section-title" id="stories-title">开发者故事</h2>
+                <p class="section-subtitle">当技术愿景遇见品牌域名，每一个选择都是战略布局</p>
+                
+                <div class="stories-grid">
+                    <article class="story-card">
+                        <div class="quote-icon">"</div>
+                        <h3>云原生工具的品牌跃迁</h3>
+                        <span class="story-role">技术创业者 · 独立开发者</span>
+                        <p>在云计算成为基础设施的今天，一个精准的域名往往比冗长的功能介绍更能传递品牌定位。对于希望把技术积累转化为产品的开发者而言，<strong>heydev.cloud</strong> 不仅是一个网址，更是向用户宣告"专注云与开发者体验"的第一张名片。简洁、有力、零歧义——这正是技术品牌最需要的底层资产。</p>
+                        <div class="story-domain">→ 推荐域名：heydev.cloud</div>
+                    </article>
+
+                    <article class="story-card">
+                        <div class="quote-icon">"</div>
+                        <h3>本土深耕，信任先行</h3>
+                        <span class="story-role">开发者社区 · 中国市场</span>
+                        <p>做面向中国开发者的技术社区，<strong>heydev.cn</strong> 是品牌战略的基石。6 个字母、无歧义、发音清晰，用户在口口相传中几乎零损耗。相比冗长的二级域名，独立的 .cn 品牌域名让社区在搜索引擎中的权重和可信度大幅提升，本土用户一眼即知这是"属于中国开发者的品牌"。</p>
+                        <div class="story-domain">→ 推荐域名：heydev.cn</div>
+                    </article>
+
+                    <article class="story-card">
+                        <div class="quote-icon">"</div>
+                        <h3>企业级服务的品牌护城河</h3>
+                        <span class="story-role">B2B SaaS 公司 · 企业服务</span>
+                        <p>在向大型企业客户提案时，<strong>heydev.com.cn</strong> 往往成为信任背书的关键一环。它不仅满足了中国市场的商业合规要求，更在客户心中建立了"正规、专业、长期经营"的品牌印象。配合 .cn 主站，形成完整的品牌矩阵，让企业在招标与商务谈判中占据先机。</p>
+                        <div class="story-domain">→ 推荐域名：heydev.com.cn</div>
+                    </article>
+
+                    <article class="story-card">
+                        <div class="quote-icon">"</div>
+                        <h3>组合持有，协同增值</h3>
+                        <span class="story-role">技术品牌投资人 · 长期布局</span>
+                        <p>单独持有任何一个后缀都存在品牌缺口。当团队一次性拿下 <strong>heydev.cn + heydev.com.cn + heydev.cloud</strong> 的组合后，不仅阻断了竞争对手的仿冒空间，更让不同业务线（社区、企业、云服务）各自拥有精准入口。组合的价值远大于单一域名的简单相加，是长期品牌架构的明智之选。</p>
+                        <div class="story-domain">→ 推荐组合：三套域名矩阵</div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 组合价值 -->
+            <section class="value-section" id="value" aria-labelledby="value-title">
+                <h2 class="section-title" id="value-title">组合价值</h2>
+                <p class="section-subtitle">三套域名协同，形成品牌保护与市场覆盖的完整闭环</p>
+                <div class="value-grid">
+                    <article class="value-card">
+                        <div class="value-card-icon">🎯</div>
+                        <h3>品牌护城河</h3>
+                        <p>同时持有 .cn / .com.cn / .cloud，有效防止品牌仿冒与流量分散，构建完整的品牌防御体系。</p>
+                    </article>
+                    <article class="value-card">
+                        <div class="value-card-icon">🌐</div>
+                        <h3>全场景覆盖</h3>
+                        <p>从本土用户触达到企业商业背书，再到云原生技术定位，不同域名承担不同战略角色。</p>
+                    </article>
+                    <article class="value-card">
+                        <div class="value-card-icon">💎</div>
+                        <h3>稀缺资产包</h3>
+                        <p>优质短域名组合日益稀缺，"Hey+Dev" 的情感连接力与技术指向性，具备长期品牌沉淀价值。</p>
+                    </article>
+                    <article class="value-card">
+                        <div class="value-card-icon">📈</div>
+                        <h3>协同增值</h3>
+                        <p>组合持有远大于单一域名的价值总和，适合有长期品牌规划的技术团队一次性战略布局。</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 联系模块 - 重构整合 -->
+            <section class="contact-section" id="contact" aria-labelledby="contact-title">
+                <div class="contact-box">
+                    <div class="contact-box-header">
+                        <h2 id="contact-title">与我联系 · 品牌合作</h2>
+                        <p>如果您正在寻找能够承载技术愿景的品牌域名组合，欢迎随时联系探讨合作可能</p>
                     </div>
-                    <p>新顶级域名，天然契合云计算、云原生、DevOps 及基础设施赛道。品牌指向性极强，是布局云服务市场的精准入口。</p>
-                    <div class="domain-meta">
-                        <span>☁️ 云原生</span>
-                        <span>🚀 高辨识度</span>
+
+                    <div class="contact-grid">
+                        <div class="contact-info">
+                            <h3>🤝 合作方式</h3>
+                            <ul>
+                                <li><span class="highlight">heydev.cn</span> — 本土核心入口，适合技术社区与开发者平台</li>
+                                <li><span class="highlight">heydev.com.cn</span> — 企业级商业背书，适合 B2B 品牌站点</li>
+                                <li><span class="highlight">heydev.cloud</span> — 云原生精准定位，适合云服务与基础设施</li>
+                                <li>三套域名可<span class="highlight">单独合作</span>，亦可<span class="highlight">组合转让</span></li>
+                                <li>支持品牌咨询、域名转移及后续技术支持</li>
+                            </ul>
+                        </div>
+                        <div class="contact-info">
+                            <h3>📧 联系方式</h3>
+                            <ul>
+                                <li>合作咨询与商务洽谈请发送邮件</li>
+                                <li>通常在 24 小时内回复</li>
+                                <li>支持中文与英文沟通</li>
+                                <li>欢迎技术团队、投资机构及品牌方联系</li>
+                            </ul>
+                            <a href="mailto:jimmyshu51@gmail.com?subject=HEYDEV%20品牌合作咨询" class="email-display" id="emailBox" aria-label="发送邮件至 jimmyshu51@gmail.com">
+                                <span>✉️</span>
+                                <span>jimmyshu51@gmail.com</span>
+                            </a>
+                            <p class="copy-hint">点击即可唤起邮件客户端</p>
+                        </div>
+                    </div>
+
+                    <hr class="contact-divider">
+
+                    <div class="contact-cta">
+                        <p>无论您是初创团队寻找第一个品牌域名，还是成熟企业进行品牌矩阵扩张，<br>HEYDEV 域名组合都能为您的技术愿景提供坚实的品牌基础。</p>
+                        <a href="mailto:jimmyshu51@gmail.com?subject=HEYDEV%20品牌合作咨询" class="btn btn-primary" id="footerCtaBtn">
+                            立即发送合作咨询
+                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
 
-        <section class="value-section">
-            <h2 class="section-title">组合价值</h2>
-            <p class="section-subtitle">三套域名协同，形成品牌保护与市场覆盖的完整闭环</p>
-            <div class="value-grid">
-                <div class="value-card">
-                    <div class="value-card-icon">🎯</div>
-                    <h3>品牌护城河</h3>
-                    <p>同时持有 .cn / .com.cn / .cloud，有效防止品牌仿冒与流量分散，构建完整的品牌防御体系。</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-card-icon">🌐</div>
-                    <h3>全场景覆盖</h3>
-                    <p>从本土用户触达到企业商业背书，再到云原生技术定位，不同域名承担不同战略角色。</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-card-icon">💎</div>
-                    <h3>稀缺资产包</h3>
-                    <p>优质短域名组合日益稀缺，"Hey+Dev" 的情感连接力与技术指向性，具备长期品牌沉淀价值。</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-card-icon">📈</div>
-                    <h3>协同增值</h3>
-                    <p>组合持有远大于单一域名的价值总和，适合有长期品牌规划的技术团队一次性战略布局。</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-section" id="contact">
-            <div class="contact-box">
-                <h2>期待与您的团队共创</h2>
-                <p>如果您正在寻找能够承载技术愿景的品牌域名组合，欢迎随时联系探讨合作可能。</p>
-                <a href="mailto:jimmyshu51@gmail.com?subject=HEYDEV 品牌合作咨询" class="email-display" id="emailBox">
-                    <span>✉️</span>
-                    <span>jimmyshu51@gmail.com</span>
-                </a>
-                <p class="copy-hint">点击即可发送邮件</p>
-            </div>
-        </section>
-
-        <footer>
+        <footer role="contentinfo">
             <div class="disclaimer-box">
                 <strong>免责与合规声明 / Disclaimer:</strong><br>
                 本页面展示之域名矩阵（heydev.cn / heydev.com.cn / heydev.cloud）为独立持有并运营的技术开发者项目与品牌资产展示页。本项目/网站与全球任何第三方实体、公司、同名产品或注册商标无任何隶属、授权、背书或关联关系。<br>
@@ -577,9 +821,7 @@
             setTimeout(() => {
                 this.style.background = '';
             }, 300);
-
-            // 触发 GA4 点击事件追踪
-            trackEmailClick('Bottom Contact Card');
+            trackEmailClick('Contact Section Email Card');
         });
 
         // 顶部 Hero 洽谈合作按钮点击事件
@@ -587,6 +829,14 @@
         if (heroBtn) {
             heroBtn.addEventListener('click', function() {
                 trackEmailClick('Hero CTA Button');
+            });
+        }
+
+        // 底部 CTA 按钮点击事件
+        const footerCta = document.getElementById('footerCtaBtn');
+        if (footerCta) {
+            footerCta.addEventListener('click', function() {
+                trackEmailClick('Footer CTA Button');
             });
         }
 
